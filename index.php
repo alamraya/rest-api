@@ -2,13 +2,13 @@
 
     include "conn.php";
 
-    // if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') { //jika method POST
     
-    //     $namanya = $_REQUEST['namanya'];
-    //     echo $nama;
-    // } else
+        $namanya = $_POST['namanya'];
+        echo $namanya;
+    } else
     
-    if ($_SERVER['REQUEST_METHOD'] == 'GET'){
+    if ($_SERVER['REQUEST_METHOD'] == 'GET'){ //jika method GET
         $qu = "select * from mahasiswa";
         $ko = mysqli_query($conn, $qu);
         while ($data = mysqli_fetch_array($ko)) {
